@@ -72,6 +72,12 @@
 				"106"
 			],
 			"icon": "public"
+		},
+		{
+			"name": "祝你好孕",
+			"index": "good-pregnant",
+			"components": ["301"],
+			"icon": "pregnant_woman"
 		}
 	]
 }
