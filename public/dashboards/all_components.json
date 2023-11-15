@@ -4100,6 +4100,59 @@
 			"links": null,
 			"tags": [],
 			"contributors": ["tuic"]
+		},
+		"302": {
+			"id": 302,
+			"index": "number_of_people_aged_0_6",
+			"map_config": null,
+			"chart_config": {
+				"color": ["#bc7262"],
+				"types": ["ScatterChart"],
+				"unit": "人",
+				"backgrounds": [
+					{
+						"color": "#f5c48980",
+						"top": "0",
+						"left": "0",
+						"width": "50%",
+						"height": "50%"
+					},
+					{
+						"color": "#f75d5280",
+						"top": "0",
+						"left": "50%",
+						"width": "50%",
+						"height": "50%"
+					},
+					{
+						"color": "#436ce880",
+						"top": "50%",
+						"left": "0",
+						"width": "50%",
+						"height": "50%"
+					},
+					{
+						"color": "#29c22b80",
+						"top": "50%",
+						"left": "50%",
+						"width": "50%",
+						"height": "50%"
+					}
+				]
+			},
+			"name": "安全係數",
+			"source": "民政局",
+			"history_data": true,
+			"time_from": "2022-01-01T14:50:55+08:00",
+			"time_to": "2023-10-01T00:00:00+08:00",
+			"update_freq": 1,
+			"update_freq_unit": "month",
+			"short_desc": "// todo 顯示緊急救護的上月統計資訊",
+			"long_desc": "// todo顯示緊急救護的上月統計資訊，資料來源為台北市消防局內部資料，每月更新。",
+			"use_case": "// todo瞭解緊急救護服務案件的統計資訊，有助於優化救護服務的配置及應急措施。",
+			"links": null,
+			"tags": [],
+			"contributors": ["tuic"]
 		}
 	}
 }
