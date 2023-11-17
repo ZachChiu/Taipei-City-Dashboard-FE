@@ -23,16 +23,20 @@ const chartOptions = ref({
 			type: "xy",
 		},
 	},
+	grid: {
+		show: false,
+	},
 	tooltip: {
 		custom: function ({ series, seriesIndex, dataPointIndex, w }) {
 			return (
 				'<div class="chart-tooltip">' +
 				"<h6>" +
-				w.globals.seriesX[seriesIndex][dataPointIndex] +
+				props.series[seriesIndex].data[dataPointIndex].name +
 				"</h6>" +
 				"<span>" +
-				series[seriesIndex][dataPointIndex] +
-				` ${props.chart_config.unit}` +
+				`${props.chart_config.xaxisUnit}:${series[seriesIndex][dataPointIndex]}` +
+				"<br />" +
+				`${props.chart_config.yaxisUnit}:${w.globals.seriesX[seriesIndex][dataPointIndex]}` +
 				"</span>" +
 				"</div>"
 			);
@@ -41,16 +45,20 @@ const chartOptions = ref({
 	},
 	xaxis: {
 		tickAmount: 5,
-		min: 0,
-		max: 0,
+		// min: 0,
+		// max: 0,
 		axisTicks: {
 			show: false,
+		},
+		tooltip: {
+			enabled: false,
 		},
 	},
 	yaxis: {
 		tickAmount: 5,
-		min: 0,
-		max: 0,
+
+		// min: 0,
+		// max: 0,
 	},
 	stroke: {
 		colors: ["#282a2c"],
@@ -77,11 +85,11 @@ const findMaxMin = () => {
 };
 
 onMounted(() => {
-	findMaxMin();
-	chartOptions.value.xaxis.min = -xMax.value;
-	chartOptions.value.xaxis.max = xMax.value;
-	chartOptions.value.yaxis.min = -yMax.value;
-	chartOptions.value.yaxis.max = yMax.value;
+	// findMaxMin();
+	// chartOptions.value.xaxis.min = -xMax.value;
+	// chartOptions.value.xaxis.max = xMax.value;
+	// chartOptions.value.yaxis.min = -yMax.value;
+	// chartOptions.value.yaxis.max = yMax.value;
 	nextTick(() => {
 		drawBg();
 	});
@@ -126,6 +134,15 @@ const getSize = () => {
 const onChartUpdated = () => {
 	drawBg();
 };
+
+const processedSeries = computed(() => {
+	return props.series.map((perSeries) => {
+		return {
+			name: perSeries.name,
+			data: perSeries.data.map((obj) => obj.coordinates),
+		};
+	});
+});
 </script>
 
 <template>
@@ -135,7 +152,7 @@ const onChartUpdated = () => {
 			height="250px"
 			type="scatter"
 			:options="chartOptions"
-			:series="series"
+			:series="processedSeries"
 			@updated="onChartUpdated"
 		></apexchart>
 	</div>

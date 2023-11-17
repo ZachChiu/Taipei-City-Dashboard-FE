@@ -4153,6 +4153,91 @@
 			"links": null,
 			"tags": [],
 			"contributors": ["tuic"]
+		},
+		"303": {
+			"id": 303,
+			"index": "child_care_center",
+			"map_config": [
+				{
+					"index": "bike_path",
+					"paint": {
+						"line-color": [
+							"match",
+							["get", "type"],
+							"市區",
+							"#a0b8e8",
+							"河濱",
+							"#b7ff98",
+							"red"
+						]
+					},
+					"property": [
+						{
+							"key": "type",
+							"name": "類型"
+						},
+						{
+							"key": "name",
+							"name": "名稱"
+						}
+					],
+					"type": "line",
+					"title": "自行車道"
+				}
+			],
+			"chart_config": {
+				"color": ["#bc7262"],
+				"types": ["ScatterChart"],
+				"xaxisUnit": "停車場數量",
+				"yaxisUnit": "捷運站距離",
+				"backgrounds": [
+					{
+						"color": "#436ce880",
+						"top": "0",
+						"left": "0",
+						"width": "50%",
+						"height": "50%"
+					},
+					{
+						"color": "#29c22b80",
+						"top": "0",
+						"left": "50%",
+						"width": "50%",
+						"height": "50%"
+					},
+					{
+						"color": "#f5c48980",
+						"top": "50%",
+						"left": "0",
+						"width": "50%",
+						"height": "50%"
+					},
+					{
+						"color": "#f75d5280",
+						"top": "50%",
+						"left": "50%",
+						"width": "50%",
+						"height": "50%"
+					}
+				],
+				"map_filter": [
+					"type",
+					["容易到達", "停車場多", "近捷運站", "難以抵達"]
+				]
+			},
+			"name": "托嬰中心易達性",
+			"source": "衛生福利部社會及家庭署",
+			"history_data": false,
+			"time_from": null,
+			"time_to": null,
+			"update_freq": null,
+			"update_freq_unit": null,
+			"short_desc": "// todo 顯示緊急救護的上月統計資訊",
+			"long_desc": "// todo顯示緊急救護的上月統計資訊，資料來源為台北市消防局內部資料，每月更新。",
+			"use_case": "// todo瞭解緊急救護服務案件的統計資訊，有助於優化救護服務的配置及應急措施。",
+			"links": null,
+			"tags": [],
+			"contributors": ["tuic"]
 		}
 	}
 }
